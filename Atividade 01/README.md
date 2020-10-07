@@ -1,4 +1,4 @@
-##Descrição
+#Descrição
 
 Atividade 01 - Introdução a Computação Gráfica - 2020.1
 Professor: Christian Pagot 
