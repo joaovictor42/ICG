@@ -34,7 +34,7 @@ Dessa forma, utilizamos o make para gerar o executável e posteriormente execut�
 
 Finalmente, a janela OpenGL abaixo demonstra que o programa foi compilado e executado com sucesso.
 
-![Triangulo](https://github.com/joaovictor42/ICG/tree/main/images/triangulo.jpeg)
+![triangulo](https://github.com/joaovictor42/ICG/blob/main/images/triangulo.jpeg?raw=true)
 
 Nenhuma dificuldade foi encontrada durante a realização da atividade.
 
