@@ -1,11 +1,11 @@
-**Atividade 01 -** Introdução a Computação Gráfica - 2020.1 <br />
+**Atividade 01 -** Introdução à Computação Gráfica - 2020.1 <br />
 **Professor:** Christian Pagot <br />
-**Alunos:** João Victor Alcoforado de Araújo - 20180083830 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Matheus Rocha dos Santos Rangel - 20200095718 <br />
+**Alunos:**  João Victor Alcoforado de Araújo - 20180083830 <br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Matheus Rocha dos Santos Rangel - 20200095718 <br />
 
 ## Descrição
 
-Este trabalho consiste em compilar um programa OpenGL moderno. Para isso utilizamos o programa disponível abaixo: 
+Este trabalho consiste em compilar um programa OpenGL moderno. Para isso, utilizamos o programa disponível abaixo: 
 https://github.com/capagot/icg/tree/master/01_hello_world_gl/modern_opengl 
 
 Esta atividade tem o intuito de: <br />
