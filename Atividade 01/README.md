@@ -1,6 +1,7 @@
 **Atividade 01 -** Introdução a Computação Gráfica - 2020.1 <br />
 **Professor:** Christian Pagot <br />
-**Alunos:** João Victor Alcoforado de Araújo, 20180083830; Matheus Rocha dos Santos Rangel, 20200095718 <br />
+**Alunos:** João Victor Alcoforado de Araújo, 20180083830 <br />
+            Matheus Rocha dos Santos Rangel, 20200095718 <br />
 
 ## Descrição
 
