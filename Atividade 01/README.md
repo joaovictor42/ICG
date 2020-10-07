@@ -7,14 +7,15 @@ Alunos: João Victor Alcoforado de Araújo e Matheus Rocha dos Santos Rangel
 Este trabalho consiste em compilar um programa OpenGL moderno, para isso utilizamos o programa disponível abaixo: 
 https://github.com/capagot/icg/tree/master/01_hello_world_gl/modern_opengl 
 
-Esta atividade tem o intuito de  
-• Validar instalação e configuração do ambiente de desenvolvimento em OpenGL 3.3;
-• Mostrar a compilação de um programa OpenGL moderno.
+Esta atividade tem o intuito de
+
+* Validar instalação e configuração do ambiente de desenvolvimento em OpenGL 3.3;
+* Mostrar a compilação de um programa OpenGL moderno.
 
 ## Estratégias 
-• Pesquisa de tutoriais de intalação e compilação do OpenGL;
 
-• Utilização de sistema Linux para facilitar o processo de instalação e configuração.
+* Pesquisa de tutoriais de intalação e compilação do OpenGL;
+* Utilização de sistema Linux para facilitar o processo de instalação e configuração.
 
 ## Discussão
 Instalamos o OpenGL através do tutorial mencionado nas referências, utilizando os seguintes comandos:
