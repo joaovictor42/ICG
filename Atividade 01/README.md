@@ -1,8 +1,8 @@
-## Descrição
-
 **Atividade 01 -** Introdução a Computação Gráfica - 2020.1 <br />
 **Professor:** Christian Pagot <br />
 **Alunos:** João Victor Alcoforado de Araújo e Matheus Rocha dos Santos Rangel <br />
+
+## Descrição
 
 Este trabalho consiste em compilar um programa OpenGL moderno, para isso utilizamos o programa disponível abaixo: 
 https://github.com/capagot/icg/tree/master/01_hello_world_gl/modern_opengl 
@@ -25,14 +25,19 @@ $ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 
 Após a instalação, verificou-se que poderia-se executar um arquivo OpenGL com o seguinte comando:
 
-`$ ./firstOpenGlApp`
+`$ ./moderngl_hello_world`
 
 Para atingir o objetivo da atividade, realizamos o download do arquivo indicado pelo professor e buscamos executá-los como mencionado. 
 Dessa forma, utilizamos o make para gerar o executável e posteriormente executá-lo, como mostrado abaixo:
 
+![Alt Text](https://github.com/{user}/{repo}/raw/{branch}/path/to/image.gif)
+
 Finalmente, a janela OpenGL abaixo demonstra que o programa foi compilado e executado com sucesso.
+
+![Alt Text](https://github.com/{user}/{repo}/raw/{branch}/path/to/image.gif)
 
 Nenhuma dificuldade foi encontrada durante a realização da atividade.
 
 ## Referências
 http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
+https://github.com/capagot/icg/tree/master/01_hello_world_gl/modern_opengl 
