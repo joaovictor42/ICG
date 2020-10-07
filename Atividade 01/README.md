@@ -36,7 +36,7 @@ Finalmente, a janela OpenGL abaixo demonstra que o programa foi compilado e exec
 
 ![triangulo](https://github.com/joaovictor42/ICG/blob/main/images/triangulo.jpeg?raw=true)
 
-Nenhuma dificuldade foi encontrada durante a realização da atividade.
+Nenhuma dificuldade foi encontrada durante a realização desta atividade.
 
 ## Referências
 http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
