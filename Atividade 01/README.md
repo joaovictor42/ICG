@@ -1,4 +1,4 @@
-#Descrição
+## Descrição
 
 Atividade 01 - Introdução a Computação Gráfica - 2020.1
 Professor: Christian Pagot 
@@ -11,11 +11,11 @@ Esta atividade tem o intuito de
 • Validar instalação e configuração do ambiente de desenvolvimento em OpenGL 3.3;
 • Mostrar a compilação de um programa OpenGL moderno.
 
-##Estratégias 
+## Estratégias 
 • Pesquisa de tutoriais de intalação e compilação do OpenGL;
 • Utilização de sistema Linux para facilitar o processo de instalação e configuração.
 
-##Discussão
+## Discussão
 Instalamos o OpenGL através do tutorial mencionado nas referências, utilizando os seguintes comandos:
 
 $ sudo apt-get update
@@ -33,5 +33,5 @@ Finalmente, a janela OpenGL abaixo demonstra que o programa foi compilado e exec
 
 Nenhuma dificuldade foi encontrada durante a realização da atividade.
 
-##Referências
+## Referências
 http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
