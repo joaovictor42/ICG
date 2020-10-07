@@ -1,6 +1,6 @@
 ## Descrição
 
-**Atividade 01 - Introdução a Computação Gráfica - 2020.1** <br />
+**Atividade 01 -** Introdução a Computação Gráfica - 2020.1 <br />
 **Professor:** Christian Pagot <br />
 **Alunos:** João Victor Alcoforado de Araújo e Matheus Rocha dos Santos Rangel <br />
 
@@ -18,13 +18,14 @@ Esta atividade tem o intuito de <br />
 
 ## Discussão
 Instalamos o OpenGL através do tutorial mencionado nas referências, utilizando os seguintes comandos:
-
+```
 $ sudo apt-get update
 $ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+```
 
 Após a instalação, verificou-se que poderia-se executar um arquivo OpenGL com o seguinte comando:
 
-$ ./firstOpenGlApp
+`$ ./firstOpenGlApp`
 
 Para atingir o objetivo da atividade, realizamos o download do arquivo indicado pelo professor e buscamos executá-los como mencionado. 
 Dessa forma, utilizamos o make para gerar o executável e posteriormente executá-lo, como mostrado abaixo:
