@@ -5,10 +5,10 @@
 
 ## Descrição
 
-Este trabalho consiste em compilar um programa OpenGL moderno, para isso utilizamos o programa disponível abaixo: 
+Este trabalho consiste em compilar um programa OpenGL moderno. Para isso utilizamos o programa disponível abaixo: 
 https://github.com/capagot/icg/tree/master/01_hello_world_gl/modern_opengl 
 
-Esta atividade tem o intuito de <br />
+Esta atividade tem o intuito de: <br />
 * Validar instalação e configuração do ambiente de desenvolvimento em OpenGL 3.3;
 * Mostrar a compilação de um programa OpenGL moderno.
 
@@ -28,7 +28,7 @@ Após a instalação, verificou-se que poderia-se executar um arquivo OpenGL com
 
 `$ ./moderngl_hello_world`
 
-Para atingir o objetivo da atividade, realizamos o download do arquivo indicado pelo professor e buscamos executá-los como mencionado. 
+Para atingir o objetivo da atividade, realizamos o download dos arquivos indicados pelo professor e buscamos executá-los como mencionado. 
 Dessa forma, utilizamos o make para gerar o executável e posteriormente executá-lo, como mostrado abaixo:
 
 ![makefile](https://github.com/joaovictor42/ICG/blob/main/images/makefile.jpeg?raw=true)
