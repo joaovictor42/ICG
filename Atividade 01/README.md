@@ -30,7 +30,7 @@ Após a instalação, verificou-se que poderia-se executar um arquivo OpenGL com
 Para atingir o objetivo da atividade, realizamos o download do arquivo indicado pelo professor e buscamos executá-los como mencionado. 
 Dessa forma, utilizamos o make para gerar o executável e posteriormente executá-lo, como mostrado abaixo:
 
-![executable](https://github.com/joaovictor42/ICG/images/executable.jpeg)
+![executable](joaovictor42/ICG/images/executable.jpeg)
 
 Finalmente, a janela OpenGL abaixo demonstra que o programa foi compilado e executado com sucesso.
 
