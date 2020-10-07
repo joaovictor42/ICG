@@ -13,6 +13,7 @@ Esta atividade tem o intuito de
 
 ## Estratégias 
 • Pesquisa de tutoriais de intalação e compilação do OpenGL;
+
 • Utilização de sistema Linux para facilitar o processo de instalação e configuração.
 
 ## Discussão
