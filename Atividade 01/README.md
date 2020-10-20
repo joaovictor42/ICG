@@ -1,3 +1,5 @@
+## Instalação e Compilação do OpenGL
+
 **Atividade 01 -** Introdução à Computação Gráfica - 2020.1 <br />
 **Professor:** Christian Pagot <br />
 **Alunos:**  João Victor Alcoforado de Araújo - 20180083830 <br />
