@@ -93,12 +93,11 @@ Para tanto, x e y são incrementados/decrementados de acordo com o sinal da sua 
 
 #### Interpolação de cores na rasterização da reta
 
-A interpolação linear das cores significa começar a rasterização da linha utilizando uma cor e incrementalmente modificar essa cor para no fim da rasterização obtermos outra cor. 
-O efeito dessa interpolação é a formação de um degradê de cores, a partir de uma cor inicial para uma cor final. 
+A interpolação linear das cores significa começar a rasterização da linha utilizando uma cor e incrementalmente modificar essa cor para no fim da rasterização obtermos outra cor. O efeito dessa interpolação é a formação de um degradê de cores, a partir de uma cor inicial para uma cor final. 
 
-Dessa forma como as rasterização funciona pixel a pixel, calculamos um valor de incremento para ser adicionado a sucessivamente a cor do pixel recém rasterizado.
-Para calcular o valor do incremento utilizamos os valores das componentes R, G, B, do sistema RGBA na seguinte formula:
-`Incremento do Componente = (Componente Final - Componente Inicial) / Maior Variação Absoluta`
+Dessa forma como as rasterização funciona pixel a pixel, calculamos um valor de incremento para ser adicionado sucessivamente a cor do pixel recém rasterizado.
+Para calcular o valor do incremento utilizamos os valores das componentes R, G, B, do sistema RGBA na seguinte formula: <br/>
+`Incremento do Componente = (Componente Final - Componente Inicial) / Maior Variação Absoluta` <br/>
 Com esses valores pré-caculados podemos incrementá-los aos valores dos componentes RGBA do pixel recém rasterizado.
 Repete-se o último passo até o último pixel ser rasterizado.
 
