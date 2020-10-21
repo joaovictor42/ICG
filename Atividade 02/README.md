@@ -40,7 +40,7 @@ for(i = 0; i < 4; i++){
 
 O resultado da rasterização dos pontos pode ser visualizado na imagem.
 
-IMAGEM
+![ponto](https://github.com/jo![makefile](https://github.com/joaovictor42/ICG/blob/main/images/dots_e.png?raw=true)
 
 Pontos rasterizados: (100, 100); (200, 200); (300, 300); (400, 400).
 
