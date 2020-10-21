@@ -15,7 +15,7 @@ Essas funções rasterizam pontos, linhas e triângulos, respectivamente.
 
 ### Rasterização de Ponto
 
-As imagens dos monitores atuais são formadas a partir de uma matriz de pixels, a qual possui x pixels de largura por Y pixels de altura.
+As imagens dos monitores atuais são formadas a partir de matrizes de pixels, a qual possui x pixels de largura por y pixels de altura.
 Os pixels de uma imagem são distribuídos de acordo com suas respectivas coordenadas nessa matriz. Os pixels rasterizados neste trabalho utilizam o padrão RGBA, 
 ou seja, cada pixel é formado pela combinação do parâmetro alpha com 3 cores: vermelho, verde e azul.
 
@@ -45,14 +45,10 @@ O resultado da rasterização dos pontos pode ser visualizado na imagem.
 
 ### Rasterização de Linhas
 
-Rasterização de linhas busca atrvés de dois pontos $ P $ (ponto inicial) e $ Q $ (ponto final) determinar quais pixels devem ser rasterizados para formar um segmento de reta começando em $ P $ e terminando em $ Q $.
-e como a geração de pontos em um determinado intervalo, gerando, assim, retas. 
-Assim, para obeter-se um segmento de reta, busca-se calcular as as coordenadas dos pixels que mais se aproximam do segmento de reta desejado.
-Atualmente, existem diversos métodos de rasterização de linhas, dentre eles a aplicação direta da equação da reta, DDA (Digital Differential Analyzer) e algoritmo do Ponto Médio (Mid-Point). 
+Rasterização de linhas busca atrvés de dois pontos P (ponto inicial) Q (ponto final) determinar quais pixels devem ser rasterizados para formar um segmento de reta começando em P e terminando em Q. Assim, para obeter-se um segmento de reta, busca-se calcular as as coordenadas dos pixels que mais se aproximam do segmento de reta desejado. Atualmente, existem diversos métodos de rasterização de linhas, dentre eles a aplicação direta da equação da reta, DDA (Digital Differential Analyzer) e algoritmo do Ponto Médio (Mid-Point). 
 
-A função `DrawLine` rasteriza uma linha na tela, sua implementação utiliza como base o algoritmo do Ponto Médio. 
-Para isso, a função recebe como parâmetros o ponto incial e final, e as cores (no formato RGBA) de cada ponto. Adicionalmente, as cores dos pixels ao longo da linha rasterizada
-foram interpolados com as cores dos vértices da reta.
+A função `DrawLine()` rasteriza uma linha na tela, sua implementação utiliza como base o algoritmo do Ponto Médio. 
+Para isso, a função recebe como parâmetros o ponto incial e final, e as cores (no formato RGBA) de cada ponto. Adicionalmente, as cores dos pixels ao longo da linha rasterizada foram interpolados com as cores dos vértices da reta.
 
 O algoritmo desenvolvido generaliza a solução do Ponto Médio para todos octantes. Afim de encontrar uma solução elegante e eficiente para o problema, procuramos extensivamente 
 websites e artigos que apresentassem algoritmos com essas características, uma vez que a nossa solução inicial verificava as condições de cada octante para encontrar simetria.
@@ -102,7 +98,7 @@ O efeito dessa interpolação é a formação de um degradê de cores, a partir 
 
 Dessa forma como as rasterização funciona pixel a pixel, calculamos um valor de incremento para ser adicionado a sucessivamente a cor do pixel recém rasterizado.
 Para calcular o valor do incremento utilizamos os valores das componentes R, G, B, do sistema RGBA na seguinte formula:
-$ Incremento do Componente = (Componente Final - Componente Inicial) / Maior Variação Absoluta $
+`Incremento do Componente = (Componente Final - Componente Inicial) / Maior Variação Absoluta`
 Com esses valores pré-caculados podemos incrementá-los aos valores dos componentes RGBA do pixel recém rasterizado.
 Repete-se o último passo até o último pixel ser rasterizado.
 
