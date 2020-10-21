@@ -6,22 +6,17 @@
 
 #include "core.h"
 
-
 typedef struct{
     int x, y;
 }Point;
 
 typedef struct{
-    float Red;
-    float Green;
-    float Blue;
-    float Alpha;
-}RGBA;
-
+    double RGBA[4];
+}Color;
 
 typedef struct{
-    Point pi;
-    Point pf;
+    Point startPoint;
+    Point endPoint;
 }Line;
 
 void InitMyGl(void); // Inicializa o frame buffer
@@ -31,14 +26,10 @@ void CloseMyGl(void); // Desaloca a memória do framebuffer
 // Declaração da função que chamará as funções implementadas pelo aluno
 void MyGlDraw(void);
 
-//
-// >>> Caro aluno: declare aqui as funções que você implementar <<<
-//
+void PutPixel(Point point, Color color);
 
-void PutPixel(int x, int y, RGBA color);
+void DrawLine(Point startPoint, Point endPoint, Color color1, Color color2);
 
-
-
-void DrawLine(Point startPoint, Point endPoint, RGBA color1, RGBA color2);
+void DrawTriangle(Point p1, Point p2, Point p3, Color colorP1, Color colorP2, Color colorP3);
 
 #endif  // MYGL_H
