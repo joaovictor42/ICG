@@ -5,7 +5,7 @@
 **Alunos:**  João Victor Alcoforado de Araújo - 20180083830 <br />
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Matheus Rocha dos Santos Rangel - 20200095718 <br />
 
-## Descrição
+## Introdução
 
 Este trabalho consiste em compilar um programa OpenGL moderno. Para isso, utilizamos o programa disponível abaixo: 
 https://github.com/capagot/icg/tree/master/01_hello_world_gl/modern_opengl 
