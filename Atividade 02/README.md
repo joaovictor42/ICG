@@ -28,7 +28,7 @@ A função `PutPixel()` rasteriza um ponto na memória de vídeo recebendo como 
 e sua cor RGBA (representado pelo tipo Color). 
 
 Por sua vez, o algoritmo calcula a posição do ponto a ser rasterizado na matriz de pixels. 
-Em seguida, escreve as cores do pixel na posiçao adequada do framebuffer.
+Em seguida, escreve as cores do pixel na posição adequada do framebuffer.
 
 ```
 offset = (x*4 + y*4*IMAGE_WIDTH);
@@ -45,7 +45,7 @@ O resultado da rasterização dos pontos pode ser visualizado na imagem:
 
 ### Rasterização de Linhas
 
-A rasterização de linhas busca através de dois pontos P (ponto inicial) e Q (ponto final) determinar quais pixels devem ser rasterizados para formar um segmento de reta começando em P e terminando em Q. Assim, para obeter-se um segmento de reta, busca-se calcular as coordenadas dos pixels que mais se aproximam do segmento de reta desejado. Atualmente, existem diversos métodos de rasterização de linhas, dentre eles a aplicação direta da equação da reta, DDA (Digital Differential Analyzer) e algoritmo do Ponto Médio (Mid-Point). 
+A rasterização de linhas busca através de dois pontos P (ponto inicial) e Q (ponto final) determinar quais pixels devem ser rasterizados para formar um segmento de reta começando em P e terminando em Q. Assim, para obter-se um segmento de reta, busca-se calcular as coordenadas dos pixels que mais se aproximam do segmento de reta desejado. Atualmente, existem diversos métodos de rasterização de linhas, dentre eles a aplicação direta da equação da reta, DDA (Digital Differential Analyzer) e algoritmo do Ponto Médio (Mid-Point). 
 
 A implementação da função `DrawLine()`, que rasteriza uma linha na tela, utiliza como base o algoritmo do Ponto Médio. 
 Para isso, a função recebe como parâmetros o ponto incial e final e as cores (no formato RGBA) de cada ponto. Adicionalmente, as cores dos pixels ao longo da linha rasterizada foram interpolados com as cores dos vértices da reta.
