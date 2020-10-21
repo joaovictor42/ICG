@@ -40,9 +40,8 @@ for(i = 0; i < 4; i++){
 
 O resultado da rasterização dos pontos pode ser visualizado na imagem.
 
-![ponto](https://github.com/jo![makefile](https://github.com/joaovictor42/ICG/blob/main/images/dots_e.png?raw=true)
-
-Pontos rasterizados: (100, 100); (200, 200); (300, 300); (400, 400).
+![ponto](https://github.com/joaovictor42/ICG/blob/main/images/dots_e.png?raw=true)<br/>
+<sub>Pontos rasterizados: (100, 100); (200, 200); (300, 300); (400, 400).<sub>
 
 ### Rasterização de Linhas
 
@@ -82,6 +81,15 @@ for(i = 0; i < dx; i++){
     PutPixel(currentPoint, color);
 }
 ```
+Linhas renderizadas com o algortimo:
+
+![line2](https://github.com/joaovictor42/ICG/blob/main/images/lines2_e.png?raw=true)<br/>
+<sub>Segmentos de reta rasterizados entre os pontos: <sub> <br/>
+<sub> (0, 511),(511, 0); (0, 0),(511, 511); (255, 0),(255, 511); (0, 255),(511, 255); <sub> <br/>
+<sub> (256, 256), (511, 450); (256, 256),(270, 511); (255, 255),(50, 511); (255, 255),(0, 300); <sub> <br/>
+<sub> (255, 255), (0, 180); (255, 255),(150, 0); (255, 255),(400, 0); (255, 255),(511, 200). <sub> <br/>
+    
+
 A principal dificuldade foi encontrar e/ou desenvolver um algortimo capaz de generalizar a lógica do ponto médio.
 Além disso, todas as soluções encontradas verificam explicitamente o octante que a reta pertence.
 Porém, depois de muito esforço encontramos uma lógica que realiza menos verificações.
@@ -98,12 +106,19 @@ $ Incremento do Componente = (Componente Final - Componente Inicial) / Maior Var
 Com esses valores pré-caculados podemos incrementá-los aos valores dos componentes RGBA do pixel recém rasterizado.
 Repete-se o último passo até o último pixel ser rasterizado.
 
+![line1](https://github.com/joaovictor42/ICG/blob/main/images/line1_e.png?raw=true)<br/>
+<sub>Pontos da reta: (20, 491); (491, 20).<sub>
+    
 ### Rasterização de Triângulos
 
 A função `DrawTriangle()` desenha as arestas de um triângulo na tela e recebe como parâmetros três pontos, que representam os vértices do triângulo, bem como suas respectivas cores (RGBA).
 
 A função utiliza como base a renderização de linhas, dessa forma os vétices do triangulos são apenas passados para `DrawLine()`.
 
-IMAGEM
+![tri1_e](https://github.com/joaovictor42/ICG/blob/main/images/tri1_e.png?raw=true)<br/>
+<sub>Vértices do triângulo: (20, 20); (256, 491); (491, 20).<sub>
 
+![tri2_e](https://github.com/joaovictor42/ICG/blob/main/images/tri2_e.png?raw=true)<br/>
+<sub>Vértices do triângulo: (20, 20); (256, 491); (491, 20).<sub>
+    
 ### Referências
