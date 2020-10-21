@@ -48,7 +48,7 @@ O resultado da rasterização dos pontos pode ser visualizado na imagem:
 A rasterização de linhas busca através de dois pontos P (ponto inicial) e Q (ponto final) determinar quais pixels devem ser rasterizados para formar um segmento de reta começando em P e terminando em Q. Assim, para obter-se um segmento de reta, busca-se calcular as coordenadas dos pixels que mais se aproximam do segmento de reta desejado. Atualmente, existem diversos métodos de rasterização de linhas, dentre eles a aplicação direta da equação da reta, DDA (Digital Differential Analyzer) e algoritmo do Ponto Médio (Mid-Point). 
 
 A implementação da função `DrawLine()`, que rasteriza uma linha na tela, utiliza como base o algoritmo do Ponto Médio. 
-Para isso, a função recebe como parâmetros o ponto incial e final e as cores (no formato RGBA) de cada ponto. Adicionalmente, as cores dos pixels ao longo da linha rasterizada foram interpolados com as cores dos vértices da reta.
+Para isso, a função recebe como parâmetros o ponto incial e final, e as cores (no formato RGBA) de cada ponto. Adicionalmente, as cores dos pixels ao longo da linha rasterizada foram interpolados com as cores dos vértices da reta.
 
 O algoritmo desenvolvido generaliza a solução do Ponto Médio para todos octantes. A fim de encontrar uma solução elegante e eficiente para o problema, procuramos extensivamente websites e artigos que apresentassem algoritmos com essas características, uma vez que a nossa solução inicial verificava as condições de cada octante para encontrar simetria.
 
