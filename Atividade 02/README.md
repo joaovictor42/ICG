@@ -96,8 +96,8 @@ Para tanto, x e y são incrementados/decrementados de acordo com o sinal da sua 
 A interpolação linear das cores significa começar a rasterização da linha utilizando uma cor e incrementalmente modificar essa cor para no fim da rasterização obtermos outra cor. O efeito dessa interpolação é a formação de um degradê de cores, a partir de uma cor inicial para uma cor final. 
 
 Dessa forma como as rasterização funciona pixel a pixel, calculamos um valor de incremento para ser adicionado sucessivamente a cor do pixel recém rasterizado.
-Para calcular o valor do incremento utilizamos os valores das componentes R, G, B, do sistema RGBA na seguinte formula: <br/>
-`Incremento do Componente = (Componente Final - Componente Inicial) / Maior Variação Absoluta` <br/>
+Para calcular o valor do incremento utilizamos os valores das componentes R, G, B, do sistema RGBA na seguinte formula: <br/> <br/>
+`Incremento do Componente = (Componente Final - Componente Inicial) / Maior Variação Absoluta` <br/> <br/>
 Com esses valores pré-caculados podemos incrementá-los aos valores dos componentes RGBA do pixel recém rasterizado.
 Repete-se o último passo até o último pixel ser rasterizado.
 
@@ -116,4 +116,17 @@ A função utiliza como base a renderização de linhas, dessa forma os vétices
 ![tri2_e](https://github.com/joaovictor42/ICG/blob/main/images/tri2_e.png?raw=true)<br/>
 <sub>Vértices do triângulo: (20, 20); (256, 491); (491, 20).<sub>
     
+### Conclusão
+
+Os resultados obtidos foram considerados satistatórios, pois cumprimos todos os requisitos solicitados no trabalho. A solução apresentada pode ser considerada legível e eficiente, pontos centrais no desenvolvimento de um programa, segundo os princípios da Engenharia de Software. O trabalho foi desafiador, pois para solucionar o problema da simetria foi necessário muito esforço e fundamento matemático.
+    
 ### Referências
+
+FOLEY, JAMES. D. — Computer Graphics: Principles and Practice in C. 2nd Edition: Addison-Wesley, 1990.
+http://www.uobabylon.edu.iq/eprints/publication_2_22893_6215.pdf
+https://pt.wikipedia.org/wiki/Rasteriza%C3%A7%C3%A3o
+http://disciplinas.ist.utl.pt/leic-cg/materiais/rasterizacao/linhas/linhas_ajuda.html
+https://sites.google.com/site/felipealvesaraujocg/trabalho1
+http://matheuspraxedescg.blogspot.com/2016/08/trabalho-1-rasterizacao-de-ponto-e-linha.html
+http://fleigfleig.blogspot.com/2016/08/interpolacao-de-cores-e-triangulos.html
+http://eng-web1.eng.famu.fsu.edu/~dommelen/courses/eml3100/aids/intpol/
