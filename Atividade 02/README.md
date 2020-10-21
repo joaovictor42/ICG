@@ -28,7 +28,7 @@ A função `PutPixel()` rasteriza um ponto na memória de vídeo recebendo como 
 e sua cor RGBA (representado pelo tipo Color). 
 
 Por sua vez, o algoritmo calcula a posição do ponto a ser rasterizado na matriz de pixels. 
-Em seguida, escreve as cores do pixel na posicao adequada do framebuffer.
+Em seguida, escreve as cores do pixel na posiçao adequada do framebuffer.
 
 ```
 offset = (x*4 + y*4*IMAGE_WIDTH);
@@ -38,22 +38,21 @@ for(i = 0; i < 4; i++){
 }
 ```
 
-O resultado da rasterização dos pontos pode ser visualizado na imagem.
+O resultado da rasterização dos pontos pode ser visualizado na imagem:
 
 ![ponto](https://github.com/joaovictor42/ICG/blob/main/images/dots_e.png?raw=true)<br/>
 <sub>Pontos rasterizados: (100, 100); (200, 200); (300, 300); (400, 400).<sub>
 
 ### Rasterização de Linhas
 
-Rasterização de linhas busca atrvés de dois pontos P (ponto inicial) Q (ponto final) determinar quais pixels devem ser rasterizados para formar um segmento de reta começando em P e terminando em Q. Assim, para obeter-se um segmento de reta, busca-se calcular as as coordenadas dos pixels que mais se aproximam do segmento de reta desejado. Atualmente, existem diversos métodos de rasterização de linhas, dentre eles a aplicação direta da equação da reta, DDA (Digital Differential Analyzer) e algoritmo do Ponto Médio (Mid-Point). 
+A rasterização de linhas busca através de dois pontos P (ponto inicial) e Q (ponto final) determinar quais pixels devem ser rasterizados para formar um segmento de reta começando em P e terminando em Q. Assim, para obeter-se um segmento de reta, busca-se calcular as coordenadas dos pixels que mais se aproximam do segmento de reta desejado. Atualmente, existem diversos métodos de rasterização de linhas, dentre eles a aplicação direta da equação da reta, DDA (Digital Differential Analyzer) e algoritmo do Ponto Médio (Mid-Point). 
 
-A função `DrawLine()` rasteriza uma linha na tela, sua implementação utiliza como base o algoritmo do Ponto Médio. 
-Para isso, a função recebe como parâmetros o ponto incial e final, e as cores (no formato RGBA) de cada ponto. Adicionalmente, as cores dos pixels ao longo da linha rasterizada foram interpolados com as cores dos vértices da reta.
+A implementação da função `DrawLine()`, que rasteriza uma linha na tela, utiliza como base o algoritmo do Ponto Médio. 
+Para isso, a função recebe como parâmetros o ponto incial e final e as cores (no formato RGBA) de cada ponto. Adicionalmente, as cores dos pixels ao longo da linha rasterizada foram interpolados com as cores dos vértices da reta.
 
-O algoritmo desenvolvido generaliza a solução do Ponto Médio para todos octantes. Afim de encontrar uma solução elegante e eficiente para o problema, procuramos extensivamente 
-websites e artigos que apresentassem algoritmos com essas características, uma vez que a nossa solução inicial verificava as condições de cada octante para encontrar simetria.
+O algoritmo desenvolvido generaliza a solução do Ponto Médio para todos octantes. A fim de encontrar uma solução elegante e eficiente para o problema, procuramos extensivamente websites e artigos que apresentassem algoritmos com essas características, uma vez que a nossa solução inicial verificava as condições de cada octante para encontrar simetria.
 
-Dessa forma apresentamos abaixo uma versão simplificada do algortimo desenvolvido, que toma decisão com base no sinal do ponto médio e na variação dos eixos x e y.
+Dessa forma, apresentamos abaixo uma versão simplificada do algoritmo desenvolvido que toma decisão com base no sinal do ponto médio e na variação dos eixos x e y.
 
 ```
 // Verifica se inclinação da reta é maior do que 45°.
@@ -77,7 +76,7 @@ for(i = 0; i < dx; i++){
     PutPixel(currentPoint, color);
 }
 ```
-Linhas renderizadas com o algortimo:
+Linhas renderizadas com o algoritmo:
 
 ![line2](https://github.com/joaovictor42/ICG/blob/main/images/lines2_e.png?raw=true)<br/>
 <sub>Segmentos de reta rasterizados entre os pontos: <sub> <br/>
@@ -86,16 +85,16 @@ Linhas renderizadas com o algortimo:
 <sub> (255, 255), (0, 180); (255, 255),(150, 0); (255, 255),(400, 0); (255, 255),(511, 200). <sub> <br/>
     
 
-A principal dificuldade foi encontrar e/ou desenvolver um algortimo capaz de generalizar a lógica do ponto médio.
+A principal dificuldade foi encontrar e/ou desenvolver um algoritmo capaz de generalizar a lógica do ponto médio.
 Além disso, todas as soluções encontradas verificam explicitamente o octante que a reta pertence.
 Porém, depois de muito esforço encontramos uma lógica que realiza menos verificações.
 Para tanto, x e y são incrementados/decrementados de acordo com o sinal da sua respectiva variação. 
 
 #### Interpolação de cores na rasterização da reta
 
-A interpolação linear das cores significa começar a rasterização da linha utilizando uma cor e incrementalmente modificar essa cor para no fim da rasterização obtermos outra cor. O efeito dessa interpolação é a formação de um degradê de cores, a partir de uma cor inicial para uma cor final. 
+A interpolação linear das cores significa começar a rasterização da linha utilizando uma cor e incrementalmente modificar essa cor para, no fim da rasterização, obtermos outra cor. O efeito dessa interpolação é a formação de um degradê de cores, a partir de uma cor inicial para uma cor final. 
 
-Dessa forma como as rasterização funciona pixel a pixel, calculamos um valor de incremento para ser adicionado sucessivamente a cor do pixel recém rasterizado.
+Dessa forma, como a rasterização funciona pixel a pixel, calculamos um valor de incremento para ser adicionado sucessivamente a cor do pixel recém rasterizado.
 Para calcular o valor do incremento utilizamos os valores das componentes R, G, B, do sistema RGBA na seguinte formula: <br/> <br/>
 `Incremento do Componente = (Componente Final - Componente Inicial) / Maior Variação Absoluta` <br/> <br/>
 Com esses valores pré-caculados podemos incrementá-los aos valores dos componentes RGBA do pixel recém rasterizado.
@@ -108,7 +107,7 @@ Repete-se o último passo até o último pixel ser rasterizado.
 
 A função `DrawTriangle()` desenha as arestas de um triângulo na tela e recebe como parâmetros três pontos, que representam os vértices do triângulo, bem como suas respectivas cores (RGBA).
 
-A função utiliza como base a renderização de linhas, dessa forma os vétices do triangulos são apenas passados para `DrawLine()`.
+A função utiliza como base a renderização de linhas. Dessa forma, os vértices dos triângulos são apenas passados para `DrawLine()`.
 
 ![tri1_e](https://github.com/joaovictor42/ICG/blob/main/images/tri1_e.png?raw=true)<br/>
 <sub>Vértices do triângulo: (20, 20); (256, 491); (491, 20).<sub>
@@ -118,7 +117,7 @@ A função utiliza como base a renderização de linhas, dessa forma os vétices
     
 ### Conclusão
 
-Os resultados obtidos foram considerados satistatórios, pois cumprimos todos os requisitos solicitados no trabalho. A solução apresentada pode ser considerada legível e eficiente, pontos centrais no desenvolvimento de um programa, segundo os princípios da Engenharia de Software. O trabalho foi desafiador, pois para solucionar o problema da simetria foi necessário muito esforço e fundamento matemático.
+O trabalho foi desafiador, pois para solucionar o problema da simetria foi necessário muito esforço e fundamento matemático. Porém, os resultados obtidos foram considerados satistatórios pela equipe, pois cumprimos todos os requisitos solicitados no trabalho. As soluções apresentadas podem ser consideradas legíveis e eficientes, características recomendadas pela Engenharia de Software.
     
 ### Referências
 
