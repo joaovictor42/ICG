@@ -1,12 +1,12 @@
 /*****************************************************************************
- * Este programa é baseado no exemplo "Hello-Triangle" disponível 
- * em 
+ * Este programa é baseado no exemplo "Hello-Triangle" disponível
+ * em
  *     https://learnopengl.com/Getting-started/Hello-Triangle
- * 
+ *
  *     A principal diferença entre este programa e o exemplo acima é que neste
- * os vertex e fragment shaders são carregados a partir de arquivos externos, 
- * ao inves de estarem hard coded no código fonte. 
- *     Isso da mais flexibilidade para se fazerem experimentos com os shaders, 
+ * os vertex e fragment shaders são carregados a partir de arquivos externos,
+ * ao inves de estarem hard coded no código fonte.
+ *     Isso da mais flexibilidade para se fazerem experimentos com os shaders,
  * pois nao e necessario se recompilar o programa a cada vez que os shaders forem
  * alterados.
  ****************************************************************************/
@@ -21,7 +21,7 @@ float vertices[] = {-0.25f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f, // red triangle (cl
                      0.75f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f,
                     -0.75f, -0.5f, -0.4f, 0.0f, 0.0f, 0.75f, // blue triangle (farther)
                     -0.25f,  0.5f, -0.4f, 0.0f, 0.0f, 0.75f,
-                     0.25f, -0.5f, -0.4f, 0.0f, 0.0f, 0.75f}; 
+                     0.25f, -0.5f, -0.4f, 0.0f, 0.0f, 0.75f};
 
 char* frag_shader_source = NULL;
 char* vertex_shader_source = NULL;
@@ -66,35 +66,35 @@ void Display(void) {
 
     // Matriz Model ///////////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
-    float model_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
-                             0.0f, 1.0f, 0.0f, 0.0f, 
-                             0.0f, 0.0f, 1.0f, 0.0f, 
+    float model_array[16] = {1.0/3.0f, 0.0f, 0.0f, 0.0f,
+                             0.0f, 3.0/2.0f, 0.0f, 0.0f,
+                             0.0f, 0.0f, 1.0f, 0.0f,
                              0.0f, 0.0f, 0.0f, 1.0f};
     glm::mat4 model_mat = glm::make_mat4(model_array);
 
     // Matriz View ////////////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
-    float view_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
-                            0.0f, 1.0f, 0.0f, 0.0f, 
-                            0.0f, 0.0f, 1.0f, 0.0f, 
+    float view_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
+                            0.0f, 1.0f, 0.0f, 0.0f,
+                            0.0f, 0.0f, 1.0f, 0.0f,
                             0.0f, 0.0f, 0.0f, 1.0f};
 
     glm::mat4 view_mat = glm::make_mat4(view_array);
 
     // Matriz Projection //////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
-    float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
-                            0.0f, 1.0f, 0.0f, 0.0f, 
-                            0.0f, 0.0f, 1.0f, 0.0f, 
+    float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
+                            0.0f, 1.0f, 0.0f, 0.0f,
+                            0.0f, 0.0f, 1.0f, 0.0f,
                             0.0f, 0.0f, 0.0f, 1.0f};
 
     glm::mat4 proj_mat = glm::make_mat4(proj_array);
 
     // Thr NDC is a left handed system, so we flip along the Z axis.
     // IMPORTANT: Do not change the contents of this matrix!!!!!!
-    float flip_z_array[16] = {1.0f, 0.0f,  0.0f, 0.0f, 
-                              0.0f, 1.0f,  0.0f, 0.0f, 
-                              0.0f, 0.0f, -1.0f, 0.0f, 
+    float flip_z_array[16] = {1.0f, 0.0f,  0.0f, 0.0f,
+                              0.0f, 1.0f,  0.0f, 0.0f,
+                              0.0f, 0.0f, -1.0f, 0.0f,
                               0.0f, 0.0f,  0.0f, 1.0f};
     glm::mat4 flip_z_mat = glm::make_mat4(flip_z_array);
 
@@ -155,7 +155,7 @@ int main(int argc, char** argv) {
     if (GLEW_OK != err) {
       /* Problem: glewInit failed, something is seriously wrong. */
       fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
-      return EXIT_FAILURE; 
+      return EXIT_FAILURE;
     }
 
     fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
@@ -217,7 +217,7 @@ int main(int argc, char** argv) {
     glAttachShader(shader_program, vertex_shader);
     glAttachShader(shader_program, fragment_shader);
 
-    // Linka o Fragment e Vertex Shader para formarem o Program Shader 
+    // Linka o Fragment e Vertex Shader para formarem o Program Shader
     glLinkProgram(shader_program);
 
     // Imprime eventuais mensagens de erro de linkagem do Program Shader
@@ -227,7 +227,7 @@ int main(int argc, char** argv) {
         printf("ERROR::SHADER::PROGRAM::LINKING_FAILED\n%s\n", info_log);
     }
 
-    // Deleta os Fragment e Vertex Shaders, já que eles já foram incorporados 
+    // Deleta os Fragment e Vertex Shaders, já que eles já foram incorporados
     // ao Program Shader e não são mais necessários.
     glDeleteShader(vertex_shader);
     glDeleteShader(fragment_shader);
@@ -235,7 +235,7 @@ int main(int argc, char** argv) {
     // Ativa o Vertex Array Object (VAO)
     glBindVertexArray(vao);
 
-    // Cria um novo identificador de buffer 
+    // Cria um novo identificador de buffer
     glGenBuffers(1, &vbo);
 
     // Vincula o buffer criado a um Vertex Buffer Object (VBO)
@@ -252,7 +252,7 @@ int main(int argc, char** argv) {
     glEnableVertexAttribArray(1);
 
     // Define a cor a ser utilizada para limpar o color buffer a cada novo frame
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);            
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     // Habilita o teste de profundidade (oclusão).
     GL_CHECK(glEnable(GL_DEPTH_TEST));
