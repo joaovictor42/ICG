@@ -16,12 +16,54 @@
 #define IMAGE_HEIGHT 512 // Altura da janela OpenGL em pixels.
 
 // Array contendo as coordenadas X,Y e Z de tres vertices (um trianglulo).
-float vertices[] = {-0.25f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f, // red triangle (closer)
-                     0.25f,  0.5f, -0.1f, 0.75f, 0.0f, 0.0f,
-                     0.75f, -0.5f, -0.1f, 0.75f, 0.0f, 0.0f,
-                    -0.75f, -0.5f, -0.4f, 0.0f, 0.0f, 0.75f, // blue triangle (farther)
-                    -0.25f,  0.5f, -0.4f, 0.0f, 0.0f, 0.75f,
-                     0.25f, -0.5f, -0.4f, 0.0f, 0.0f, 0.75f};
+float vertices[] = {  -1.0f,-1.0f,-1.0f, 0.0f, 0.0f, 0.75f, //Azul
+                      -1.0f,-1.0f, 1.0f, 0.0f, 0.0f, 0.75f,
+                      -1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.75f,
+
+                       1.0f, 1.0f,-1.0f, 0.75f, 0.0f, 0.0f, //Vermelho
+                      -1.0f,-1.0f,-1.0f, 0.75f, 0.0f, 0.0f,
+                      -1.0f, 1.0f,-1.0f, 0.75f, 0.0f, 0.0f,
+
+                       1.0f,-1.0f, 1.0f, 0.0f, 0.75f, 0.0f, //Verde
+                      -1.0f,-1.0f,-1.0f, 0.0f, 0.75f, 0.0f,
+                       1.0f,-1.0f,-1.0f, 0.0f, 0.75f, 0.0f,
+
+                       1.0f, 1.0f,-1.0f, 0.75f, 0.0f, 0.0f, //Vermelho
+                       1.0f,-1.0f,-1.0f, 0.75f, 0.0f, 0.0f,
+                      -1.0f,-1.0f,-1.0f, 0.75f, 0.0f, 0.0f,
+
+                      -1.0f,-1.0f,-1.0f, 0.0f, 0.0f, 0.75f, //Azul
+                      -1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.75f,
+                      -1.0f, 1.0f,-1.0f, 0.0f, 0.0f, 0.75f,
+
+                       1.0f,-1.0f, 1.0f, 0.0f, 0.75f, 0.0f, //Verde
+                      -1.0f,-1.0f, 1.0f, 0.0f, 0.75f, 0.0f,
+                      -1.0f,-1.0f,-1.0f, 0.0f, 0.75f, 0.0f,
+
+                      -1.0f, 1.0f, 1.0f, 0.0f, 0.75f, 0.75f, //Azul claro
+                      -1.0f,-1.0f, 1.0f, 0.0f, 0.75f, 0.75f,
+                       1.0f,-1.0f, 1.0f, 0.0f, 0.75f, 0.75f,
+
+                       1.0f, 1.0f, 1.0f, 0.75f, 0.75f, 0.0f, //Amarelo
+                       1.0f,-1.0f,-1.0f, 0.75f, 0.75f, 0.0f,
+                       1.0f, 1.0f,-1.0f, 0.75f, 0.75f, 0.0f,
+
+                       1.0f,-1.0f,-1.0f, 0.75f, 0.75f, 0.0f, //Amarelo
+                       1.0f, 1.0f, 1.0f, 0.75f, 0.75f, 0.0f,
+                       1.0f,-1.0f, 1.0f, 0.75f, 0.75f, 0.0f,
+
+                       1.0f, 1.0f, 1.0f, 0.75f, 0.0f, 0.75f, //Magenta
+                       1.0f, 1.0f,-1.0f, 0.75f, 0.0f, 0.75f,
+                      -1.0f, 1.0f,-1.0f, 0.75f, 0.0f, 0.75f,
+
+                       1.0f, 1.0f, 1.0f, 0.75f, 0.0f, 0.75f, //Magenta
+                      -1.0f, 1.0f,-1.0f, 0.75f, 0.0f, 0.75f,
+                      -1.0f, 1.0f, 1.0f, 0.75f, 0.0f, 0.75f,
+
+                       1.0f, 1.0f, 1.0f, 0.0f, 0.75f, 0.75f, //Azul claro
+                      -1.0f, 1.0f, 1.0f, 0.0f, 0.75f, 0.75f,
+                       1.0f,-1.0f, 1.0f, 0.0f, 0.75f, 0.75f};
+
 
 char* frag_shader_source = NULL;
 char* vertex_shader_source = NULL;
@@ -64,20 +106,20 @@ void Display(void) {
     // Seleciona o Shader Program a ser utilizado.
     glUseProgram(shader_program);
 
-    // Matriz Model ///////////////////////////////////////////////////////////
+    // Maz Model ///////////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
-    float model_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
-                             0.0f, 1.0f, 0.0f, 0.0f,
-                             0.0f, 0.0f, 1.0f, 0.0f,
+    float model_array[16] = {0.5f, 0.0f, 0.0f, 0.0f,
+                             0.0f, 0.5f, 0.0f, 0.0f,
+                             0.0f, 0.0f, 0.75f, 0.0f,
                              0.0f, 0.0f, 0.0f, 1.0f};
     glm::mat4 model_mat = glm::make_mat4(model_array);
 
     // Matriz View ////////////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
 
-    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/10.0);//posição da câmera no esp. do Universo.
-    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, -1.0);//ponto para o qual a câmera aponta.
-    glm::vec3 cam_up = glm::vec3(0.0, 1.0, 0.0);//Vetor Up da câmera.
+    glm::vec3 cam_pos = glm::vec3(-1.0, 1.0, -1.0);//posição da câmera no esp. do Universo.
+    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, 0.0);//ponto para o qual a câmera aponta.
+    glm::vec3 cam_up = glm::vec3(0.0, 1.0, 1.0);//Vetor Up da câmera.
 
     glm::vec3 z_cam = glm::normalize(cam_pos - cam_look_at);
     glm::vec3 x_cam = glm::normalize(glm::cross(glm::normalize(cam_up), z_cam));
@@ -106,8 +148,8 @@ void Display(void) {
     // You will have to change the contents of this matrix for the exercises
     float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
                             0.0f, 1.0f, 0.0f, 0.0f,
-                            0.0f, 0.0f, 1.0f, -8.0f,
-                            0.0f, 0.0f, 1.0/8.0f, 0.0f};
+                            0.0f, 0.0f, 1.0f, -1.0f,
+                            0.0f, 0.0f, 1.0f, 0.0f};
 
     glm::mat4 proj_mat = glm::make_mat4(proj_array);
 
@@ -130,7 +172,7 @@ void Display(void) {
     glBindVertexArray(vao);
 
     // Desenha as tres primeiras primitivias, comecando pela de indice 0.
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
 
     glFlush();            //
     glutSwapBuffers();    //
