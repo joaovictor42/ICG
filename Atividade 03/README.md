@@ -1,4 +1,4 @@
-## Rasterização de Primitivas em OpenGL
+##  Implementação do Pipeline Gráfico
 
 **Atividade 03 -** Introdução à Computação Gráfica - 2020.1 <br />
 **Professor:** Christian Pagot <br />
