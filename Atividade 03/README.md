@@ -6,7 +6,7 @@
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Matheus Rocha dos Santos Rangel - 20200095718 <br />
 
 ### Introdução
-O objetivo deste trabalho é compreender a estrutura do pipeline gráfico através da implementação das transformações geométricas que o compõem. Essa implementação utiliza como base o código template C++17 disponibilizado pelo professor, disponível no <a href="https://github.com/capagot/icg/tree/master/03_transformations">repositório da disciplina</a>.
+O objetivo deste trabalho é compreender a estrutura do pipeline gráfico através da implementação das transformações geométricas que o compõe. Essa implementação utiliza como base o código template C++17 disponibilizado pelo professor, disponível no <a href="https://github.com/capagot/icg/tree/master/03_transformations">repositório da disciplina</a>.
 
 Além disso, utiliza a biblioteca <a href="https://glm.g-truc.net/0.9.9/index.html">GLM</a> e os shaders do OpenGL.
 
@@ -48,7 +48,7 @@ float model_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
 
 ###  Exercício 3: Projeção Perspectiva
 
-Para modificar a distorção perspectiva da cena, utilizando como distância entre o centro de projeção e a origem do sistema de coordenadas, d = 1/8, construiu-se a seguinte matriz Projection: 
+Para modificar a distorção perspectiva da cena, utilizando como parâmetro a distância entre o centro de projeção e a origem do sistema de coordenadas, d = 1/8, construiu-se a seguinte matriz Projection: 
 ```
 float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
                         0.0f, 1.0f, 0.0f, 0.0f,
