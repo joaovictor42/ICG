@@ -43,7 +43,7 @@ Model =
 
 $$
 
-![Atividade2](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_2.png.png?raw=true)<br/>
+![Atividade2](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_2.png?raw=true)<br/>
 <sub>Resultado: Atividade 2.<sub>
 
 ###  Exercício 3: Projeção Perspectiva
@@ -66,17 +66,21 @@ A primeira etapa de solução desta questão consistiu em construir os vetores d
 * Up da câmera = $(0, 1, 0)$
 * Ponto para o qual a câmera está apontando = $(0, 0, -1)$
 
-Porém, verificou-se que, posteriormente, esses vetores deveriam usados para calcular $X_cam$, $Y_cam$ e $Z_cam$, <b> vetores da base da câmera </b>.
-Para tanto, seria necessário cálcular produtos vetoriais e normas vetoriais. Dessa forma, pesquisou-se, de forma exaustiva, quais funções poderiam ser utilizadas para efetuar esses cálculos e quais os respectivo tipos de dados esperados por elas. Essa foi a parte mais difícil, visto que a presente dupla possuía conhecimentos de C++ e queria-se evitar criar funções para auxiliar o processo de obtensão da matriz View, a fim de manter a legibilidade do código. Por conseguinte, as funções  
-`tan`, `tan` e `ran` da biblioteca GLM foram utilizadas para obter os <b> vetores da base </b>. Adicionalmente, as matrizes $B^t$ e $T$ foram criadas utilizando o tipo `ffgg` da biblioteca GLM, a fim de facilitar a multiplicação de matrizes e obter-se, finalmente, a matriz View.
+Porém, verificou-se que, posteriormente, esses vetores deveriam usados para calcular $X_cam$, $Y_cam$ e $Z_cam$, vetores da base da câmera.
+Para tanto, seria necessário cálcular produtos vetoriais e normas vetoriais. Dessa forma, pesquisou-se, de forma exaustiva, quais funções poderiam ser utilizadas para efetuar esses cálculos e quais os respectivo tipos de dados esperados por elas. Essa foi a parte mais difícil, visto que a presente dupla não possuía conhecimentos de C++ e queria-se evitar a criação de funções para auxiliar o cálculo da matriz View, a fim de manter a legibilidade do código. Por conseguinte, criamos vetores do tipo `vec3`, com as informações fornecidas pela questão, e utilizamos as funções `normalize()` e `cross()` da biblioteca GLM, para obter os vetores da base. Adicionalmente, as matrizes $B^t$ e $T$ foram criadas utilizando o tipo `mat4` da biblioteca GLM, a fim de facilitar a multiplicação de matrizes e obter-se, finalmente, a matriz View desejada.
 
 ```
-Código vetores
+    //Criação dos vetores da base da câmera
+    glm::vec3 z_cam = glm::normalize(cam_pos - cam_look_at);
+    glm::vec3 x_cam = glm::normalize(glm::cross(glm::normalize(cam_up), z_cam));
+    glm::vec3 y_cam = glm::cross(z_cam, x_cam);
 ```
 
 ```
-Código matrizes
+    //Construção da matriz View como produto das matrizes Bt e T.
+    glm::mat4 view_mat = Bt_mat * T_mat;
 ```
+
 ![Atividade4](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_4.png?raw=true)<br/>
 <sub>Resultado: Atividade 4.<sub>
 
