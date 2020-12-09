@@ -7,8 +7,7 @@
 
 ### Introdução
 O objetivo deste trabalho é compreender a estrutura do pipeline gráfico através da implementação das transformações geométricas que o compõe. Essa implementação utiliza como base o código template C++17 disponibilizado pelo professor, disponível no <a href="https://github.com/capagot/icg/tree/master/03_transformations">repositório da disciplina</a>.
-
-Além disso, utiliza a biblioteca <a href="https://glm.g-truc.net/0.9.9/index.html">GLM</a> e os shaders do OpenGL.
+Além disso, faz uso da biblioteca <a href="https://glm.g-truc.net/0.9.9/index.html">GLM</a> e sua execução ocorre nos shaders do OpenGL.
 
 ###  Exercício 1: Escala
 
