@@ -89,7 +89,7 @@ glm::mat4 view_mat = Bt_mat * T_mat;
 Neste exercício objetivou-se modificar as matrizes Model, View e Projection, a fim de renderizar um cubo com face de cores diferentes. 
 Dessa forma, compreendeu-se que outras geometrias poderiam ser formadas por combinações de triângulos. Para tanto, foram criados 12 triângulos, de maneira que
 cada par compõe uma face. Por fim, alterou-se a escala, posição da câmera e distorção a fim de obter-se a seguinte imagem do cubo.
-
+#### Resultado:
 ![Atividade5](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_5.png?raw=true)<br/>
 <sub>Resultado: Atividade 5.<sub>
 
