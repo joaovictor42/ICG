@@ -10,14 +10,6 @@ O objetivo deste trabalho é compreender a estrutura do pipeline gráfico atrav�
 
 Além disso, utiliza a biblioteca <a href="https://glm.g-truc.net/0.9.9/index.html">GLM</a> e os shaders do OpenGL.
 
-Como todas as questões do trabalho utilizavam como base o mesmo código, para facilitar a visualização, optou-se por gravar os respectivos códigos de solução no histórico de commits do repositório, como segue abaixo:
-
-* Questao 1
-* Questao 2
-* Questao 3 [retificada]
-* Questao 4 [retificada]
-* Questao 5 [retificada]
-
 ###  Exercício 1: Escala
 
 A fim de alterar as proporções dos objetos da cena para a escala solicitada (1/3, 3/2, 1), construiu-se a seguinte matriz Model:
@@ -30,7 +22,7 @@ float model_array[16] = {1.0/3.0f, 0.0f, 0.0f, 0.0f,
 ```
 #### Resultado:
 ![Atividade1](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_1.png?raw=true)<br/>
-<sub>Resultado: Atividade 1.<sub>
+<sub>Resultado: exercício 1.<sub>
     
 ###  Exercício 2: Translação
 
@@ -44,7 +36,7 @@ float model_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
 ```
 #### Resultado:
 ![Atividade2](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_2.png?raw=true)<br/>
-<sub>Resultado: Atividade 2.<sub>
+<sub>Resultado: exercício 2.<sub>
 
 ###  Exercício 3: Projeção Perspectiva
 
@@ -57,7 +49,7 @@ float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
 ```
 #### Resultado:
 ![Atividade3](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_3.png?raw=true)<br/>
-<sub>Resultado: Atividade 3.<sub>
+<sub>Resultado: exercício 3.<sub>
 
 ###  Exercício 4: Posição da Câmera
 
@@ -82,7 +74,7 @@ glm::mat4 view_mat = Bt_mat * T_mat;
 ```
 #### Resultado:
 ![Atividade4](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_4.png?raw=true)<br/>
-<sub>Resultado: Atividade 4.<sub>
+<sub>Resultado: exercício 4.<sub>
 
 ###  Exercício 5: Transformações Livres
 
@@ -91,7 +83,7 @@ Dessa forma, compreendeu-se que outras geometrias poderiam ser formadas por comb
 cada par compõe uma face. Por fim, alterou-se a escala, posição da câmera e distorção a fim de obter-se a seguinte imagem do cubo.
 #### Resultado:
 ![Atividade5](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_5.png?raw=true)<br/>
-<sub>Resultado: Atividade 5.<sub>
+<sub>Resultado: exercício 5.<sub>
 
 ### Conclusão
 
