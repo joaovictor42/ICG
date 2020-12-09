@@ -99,5 +99,5 @@ Este trabalho proporcionou muitos aprendizados e possibilitou uma sólida compre
 A principal dificuldade foi a manipulação da biblioteca GLM na linguagem C++, visto que a dupla não possuía experiência com a linguagem de programação.
 
 ### Referências
-MARSCHNNER, S.; SHIRLEY, P. Transformation  Matrices. In: FUNDA-MENTALS of Computer Graphics. 3. ed. rev. [S. l.]: CRC Press, 2009. cap. 6, p. 111-135.
+MARSCHNNER, S.; SHIRLEY, P. Transformation  Matrices. In: FUNDA-MENTALS of Computer Graphics. 3. ed. rev. [S. l.]: CRC Press, 2009. cap. 6, p. 111-135. <br />
 http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/
