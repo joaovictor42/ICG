@@ -74,12 +74,33 @@ void Display(void) {
 
     // Matriz View ////////////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
-    float view_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
-                            0.0f, 1.0f, 0.0f, 0.0f,
-                            0.0f, 0.0f, 1.0f, 0.0f,
-                            0.0f, 0.0f, 0.0f, 1.0f};
 
-    glm::mat4 view_mat = glm::make_mat4(view_array);
+    glm::vec3 cam_pos = glm::vec3(-1.0/10.0, 1.0/10.0, 1.0/10.0);//posição da câmera no esp. do Universo.
+    glm::vec3 cam_look_at = glm::vec3(0.0, 0.0, -1.0);//ponto para o qual a câmera aponta.
+    glm::vec3 cam_up = glm::vec3(0.0, 1.0, 0.0);//Vetor Up da câmera.
+
+    glm::vec3 z_cam = glm::normalize(cam_pos - cam_look_at);
+    glm::vec3 x_cam = glm::normalize(glm::cross(glm::normalize(cam_up), z_cam));
+    glm::vec3 y_cam = glm::cross(z_cam, x_cam);
+
+    //Matriz da base da câmera, transposta.
+    float Bt_array[16] = {x_cam.x, y_cam.x, z_cam.x, 0.0f,
+                          x_cam.y, y_cam.y, z_cam.y, 0.0f,
+                          x_cam.z, y_cam.z, z_cam.z, 0.0f,
+                          0.0f, 0.0f, 0.0f, 1.0f};
+
+    glm::mat4 Bt_mat = glm::make_mat4(Bt_array);
+
+    float T_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
+                         0.0f, 1.0f, 0.0f, 0.0f,
+                         0.0f, 0.0f, 1.0f, 0.0f,
+                        -cam_pos.x, -cam_pos.y, -cam_pos.z, 1.0f};
+
+    glm::mat4 T_mat = glm::make_mat4(T_array);
+
+    //Construção da matriz View como produto das matrizes Bt e T.
+
+    glm::mat4 view_mat = Bt_mat * T_mat;
 
     // Matriz Projection //////////////////////////////////////////////////////
     // You will have to change the contents of this matrix for the exercises
