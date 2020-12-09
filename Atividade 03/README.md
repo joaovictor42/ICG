@@ -28,7 +28,7 @@ float model_array[16] = {1.0/3.0f, 0.0f, 0.0f, 0.0f,
                          0.0f, 0.0f, 1.0f, 0.0f,
                          0.0f, 0.0f, 0.0f, 1.0f};
 ```
-
+#### Resultado:
 ![Atividade1](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_1.png?raw=true)<br/>
 <sub>Resultado: Atividade 1.<sub>
     
@@ -40,9 +40,9 @@ Para transladar os objetos da cena em (1, 0, 0), construiu-se a seguinte matriz 
 float model_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
                          0.0f, 1.0f, 0.0f, 0.0f,
                          0.0f, 0.0f, 1.0f, 0.0f,
-                         1.0f, 0.0f, 0.0f, 1.0f}
+                         1.0f, 0.0f, 0.0f, 1.0f};
 ```
-
+#### Resultado:
 ![Atividade2](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_2.png?raw=true)<br/>
 <sub>Resultado: Atividade 2.<sub>
 
@@ -55,7 +55,7 @@ float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
                         0.0f, 0.0f, 1.0f, -8.0f,
                         0.0f, 0.0f, 0.125f, 0.0f};
 ```
-
+#### Resultado:
 ![Atividade3](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_3.png?raw=true)<br/>
 <sub>Resultado: Atividade 3.<sub>
 
@@ -80,7 +80,7 @@ glm::vec3 y_cam = glm::cross(z_cam, x_cam);
 //Construção da matriz View como produto das matrizes Bt e T.
 glm::mat4 view_mat = Bt_mat * T_mat;
 ```
-
+#### Resultado:
 ![Atividade4](https://github.com/joaovictor42/ICG/blob/main/images/Atividade_4.png?raw=true)<br/>
 <sub>Resultado: Atividade 4.<sub>
 
